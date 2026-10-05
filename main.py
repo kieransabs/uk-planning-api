@@ -6,7 +6,7 @@ app = FastAPI(title="UK Planning & Risk Feed")
 
 # Your Coinbase Wallet Address
 WALLET_ADDRESS = "0x62832d765f2E50319BA72C1cA85562Fed0c58D36"
-PRICE_PER_CALL_USDC = "0.25"
+PRICE_PER_CALL_USDC = "0.02"
 FACILITATOR_URL = "https://facilitator.openmid.xyz/verify"
 
 @app.get("/")
@@ -30,7 +30,7 @@ async def get_planning_risk(request: Request, reference: str = "camden"):
                         "network": "eip155:8453",  # Base Mainnet
                         "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",  # USDC on Base
                         "payTo": WALLET_ADDRESS,
-                        "maxAmountRequired": "250000",  # $0.25 in USDC
+                        "maxAmountRequired": "20000",  # $0.02 in USDC
                         "description": "Access to UK aggregated planning risk data"
                     }
                 ]
